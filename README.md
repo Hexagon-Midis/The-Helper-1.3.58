@@ -7,6 +7,7 @@ Welcome to The Helper, The Helper is a batch file (which might turn into a .exe 
 1. The Helper Version: 1.3.54
 2. BITS: 32 Bits and 64 Bits
 3. Operating system Windows 2000, XP, Vista, 7, 8.1, and 10
+4. File Extension: .bat
 
 # Warnings for 2 operating systems
 
