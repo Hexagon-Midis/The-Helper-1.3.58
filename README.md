@@ -25,4 +25,4 @@ You can find THSE at: https://github.com/Hexagon-Midis/The-Helper-Setup-Extentio
 
 This is just in case if The Helper unexpectly doesn't run the THSE setup file...
 
-# Copyright © Hexagon Midis 2020, The Helper 2020
+# Copyright © Hexagon Midis 2020
