@@ -18,3 +18,9 @@ And I might take off Windows 2000 and Windows XP because of what I mentioned abo
 # Change-Log (until next update)
 
 Nothing yet...
+
+# The Helper Setup Extention
+
+You can find THSE at: https://github.com/Hexagon-Midis/The-Helper-Setup-Extention
+
+This is just in case if The Helper unexpectly doesn't run the THSE setup file...
