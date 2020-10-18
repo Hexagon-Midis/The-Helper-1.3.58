@@ -11,18 +11,16 @@ Welcome to The Helper, The Helper is a batch file (which might turn into a .exe 
 
 # Warnings for 2 operating systems
 
-I have made The Helper before on Windows XP and it loaded the batch, but when I saw what it looked like, it was terrible because some of the things were not what they were supposed to look like. I am also not sure what this program would look like in Windows 2000 (I could do a VirtualBox of and see what The Helper would look like)
+I have made The Helper before on Windows XP and it loaded the batch, but when I saw what it looked like, it was terrible because some of the things were not what they were supposed to look like. I am also not sure what this program would look like in Windows 2000 (I could do a VirtualBox of it and see what The Helper would look like)
 
 And I might take off Windows 2000 and Windows XP because of what I mentioned above...
 
-# Change-Log (until next update)
+# Change-Log (Version 1.3.57)
 
-Nothing yet...
+Nothing cause im lazy to write one (also forgot some stuff I did)
 
 # The Helper Setup Extention
 
-You can find THSE at: https://github.com/Hexagon-Midis/The-Helper-Setup-Extention
-
-This is just in case if The Helper unexpectly doesn't run the THSE setup file...
+You can find THSE at: N/A Deleted by me
 
 # Copyright © Hexagon Midis 2020
