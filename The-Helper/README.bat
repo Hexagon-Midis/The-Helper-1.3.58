@@ -1,5 +1,5 @@
 @echo off
-echo.Version 1.3.55 So far
+echo.Version 1.3.57 So far
 echo.
 echo.The Folder for "The Helper" Will be more simplified soon...
 echo.
