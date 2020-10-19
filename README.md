@@ -19,6 +19,10 @@ And I might take off Windows 2000 and Windows XP because of what I mentioned abo
 
 Nothing cause im lazy to write one (also forgot some stuff I did)
 
+# Screenshots
+
+Soon
+
 # The Helper Setup Extention
 
 You can find THSE at: N/A Deleted by me
