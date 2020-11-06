@@ -706,14 +706,40 @@ if %input%==1 %answer% goto CLEARSCREEN
 if %input%==2 %answer% goto CHECK-VERTIFY
 if %input%==3 %answer% goto DRF
 :DRF
-::Download Required Files
+::Start Program "SetupStartScript.bat" For Required Files (if SENSOR is there then no downloads happen)
+:RFDP
+:Required Files Downloader Pending
 if not exist "C:\The-Helper\DownloadSystemDownloads\MidiPlayers\SENSOR_( DO NOT DELETE )" (
     call :colorEcho 0a "Loaded Downloaders for BPFA, PFA, Kiva, Zenith, FFMpeg, WinMM and PFA Viz..."
     echo.
-echo A batch file named "SetupStartScript.bat" Will be started after the above message...
+echo A Internet Check will be started before "SetupStartScript.bat" to see if you have Internet Access...
 echo.
 TIMEOUT /t 1
+:InternetChecker
+::Checking for Internet Access
+echo Checking for a working Internet Connection...
 echo.
+ping google.com
+echo Did replies show up? (Yes or No)
+echo.
+set /p input=Choice= 
+if %input%==yes %answer% goto InternetConnectionFound
+if %input%==no %answer% goto NoInternetConnectionFound
+:InternetConnectionFound
+:You have internet
+echo There was a connection established... Downloading Required Files...
+echo.
+TIMEOUT /t 1
+goto RFD2
+:NoInternetConnectionFound
+:You have no internet
+echo There was no connection established... Skipping the Required Files Download... (You will expect issues offline)
+echo.
+pause
+goto main
+echo.
+:RFD2
+:Required Files Downloader
 call :colorEcho 0a "Starting "SetupStartScript.bat" Currently..."
 echo.
 timeout /t 1
