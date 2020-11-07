@@ -89,16 +89,16 @@ if not exist "C:\The-Helper" (
 )
 title Starting The Helper... (Making a Desktop Shortcut...)
 ::Make desktop shortcut (sensor) if its not there | Making desktop shortcut process...
-if not exist "%HOMEDRIVE%%HOMEPATH%\Desktop\The Helper 1.3.57.lnk" (
+if not exist "%HOMEDRIVE%%HOMEPATH%\Desktop\The Helper 1.3.58.lnk" (
     call :colorEcho 0a "The Helper has made a shortcut on your desktop for you to launch it faster"
     echo.
 
 )
 	@echo off
 echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
-echo sLinkFile = "%HOMEDRIVE%%HOMEPATH%\Desktop\The Helper 1.3.57.lnk" >> CreateShortcut.vbs
+echo sLinkFile = "%HOMEDRIVE%%HOMEPATH%\Desktop\The Helper 1.3.58.lnk" >> CreateShortcut.vbs
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
-echo oLink.TargetPath = "%HOMEDRIVE%%HOMEPATH%\Downloads\The-Helper\TheHelper1.3.57.bat" >> CreateShortcut.vbs
+echo oLink.TargetPath = "%HOMEDRIVE%%HOMEPATH%\Downloads\The-Helper\TheHelper1.3.58.bat" >> CreateShortcut.vbs
 echo oLink.Save >> CreateShortcut.vbs
 cscript CreateShortcut.vbs
 del CreateShortcut.vbs
@@ -121,14 +121,14 @@ timeout /t 2
 echo Automatically restarting The Helper in 1 minute or press any button after the downloaders are done...
 TIMEOUT 60
 title The Helper is Restarting...
-start TheHelper1.3.57.bat
+start TheHelper1.3.58.bat
 cls
 )
-title The Helper 1.3.57
-title The Helper 1.3.57
+title The Helper 1.3.58
+title The Helper 1.3.58
 echo.
 echo [=============================]
-echo [Welcome to The Helper 1.3.57 ]
+echo [Welcome to The Helper 1.3.58 ]
 echo [=============================]
 echo [   -Select a choice (1-8)-   ]
 echo [=============================]
