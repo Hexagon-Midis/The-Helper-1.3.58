@@ -632,6 +632,7 @@ echo.
 echo 3) Tool Downloader
 set /p input=Choice= 
 if %input%==1 %answer% goto SD
+if %input%==2 %answer% goto MD
 :TD
 title The Helper | Tool Downloader
 ::tool downloader
@@ -671,6 +672,8 @@ if %input%==2 %answer% goto main
 if %input%==1 %answer% goto main
 if %input%==2 %answer% goto main
 if %input%==q %answer% goto main
+:TD
+
 :POWER
 title The Helper | Power
 echo [What do you want to do?]
@@ -745,7 +748,7 @@ echo.
 timeout /t 2
 echo Automatically restarting The Helper in 1 minute or press any button after the downloaders are done...
 TIMEOUT 60
-start TheHelper1.3.57.bat
+start TheHelper1.3.58.bat
 cls
 )
 :CHECK-VERTIFY
@@ -756,7 +759,7 @@ goto main
 :CLEARSCREEN
 ::just incase it doesnt restart the helper
 cd %HOMEDRIVE%%HOMEPATH%\Downloads\The-Helper
-start TheHelper1.3.57.bat
+start TheHelper1.3.58.bat
 cls
 :EXITHELPER
 exit
