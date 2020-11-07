@@ -21,4 +21,8 @@ Soon
 
 You can find THSE at: N/A Deleted by me
 
+# Using The Helper
+
+To use The Helper, Click the green "Code" Button then click on "Download ZIP" 
+
 # Copyright © Hexagon Midis 2020
