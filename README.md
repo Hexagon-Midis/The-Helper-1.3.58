@@ -23,6 +23,10 @@ You can find THSE at: N/A Deleted by me
 
 # Using The Helper
 
-To use The Helper, Click the green "Code" Button then click on "Download ZIP" 
+To use The Helper go to Releases on the side and Download the 7Z File Provided
+
+# Oops!
+
+I messed up and now "TheHelper1.3.57" is named "TheHelper1.3.57" Forever until I find a way to rename it, I'll use 7Z Files for now...
 
 # Copyright © Hexagon Midis 2020
