@@ -38,7 +38,7 @@ if not exist "C:\The-Helper" (
 	echo The folders are done. The Helper will do a quick re-check to see if the folders are there...
 	echo.
 	pause
-	echo
+	echo.
 	title Starting The Helper... (Re-Checking the Folders...)
 	::make them again if deleted
 	call :colorEcho 0a Checking Folders... [ C:\The-Helper ]
@@ -79,7 +79,7 @@ if not exist "C:\The-Helper" (
 )
 	call :colorEcho 0a Checking Folders... [ C:\The-Helper\DownloadSystemDownloads\MidiPlayers\ChikaraCustom ]
 	echo.
-	if not exist "C:\The-Helper\DownloadSystemDownloads\ChikaraCustom" (
+	if not exist "C:\The-Helper\DownloadSystemDownloads\MidiPlayers\ChikaraCustom" (
     call :colorEcho 0a "Remaking folder, ChikaraCustom..."
 	cd C:\The-Helper\DownloadSystemDownloads\MidiPlayers
 	mkdir ChikaraCustom
