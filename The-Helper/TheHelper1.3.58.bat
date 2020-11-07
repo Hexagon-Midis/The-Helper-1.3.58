@@ -663,16 +663,20 @@ echo.
 echo [What midi(s) do you want to download via browser? q to exit]
 echo.
 echo 1) [Tau.midi] Download
+echo 1.1) [Tau.midi] Preview
 echo.
 echo 2) coming soon
 echo.
 set /p input=Choice= 
 if %input%==1 %answer% start https://cdn.discordapp.com/attachments/750418062976745632/750477042214109384/Tau_-_2.5.9_-_Final.7z
+if %input%==1.1 %answer% goto TauPreview
 if %input%==2 %answer% goto main
 if %input%==1 %answer% goto main
 if %input%==2 %answer% goto main
 if %input%==q %answer% goto main
 :TD
+
+:TauPreview
 
 :POWER
 title The Helper | Power
