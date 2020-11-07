@@ -186,6 +186,7 @@ if %input%==3 %answer% goto OPERA
 if %input%==4 %answer% goto OPERA GX
 if %input%==5 %answer% goto BACK
 :CHROME
+title The Helper is Starting "Chrome.exe"
 echo.
 start chrome.exe
 echo Chrome Loaded...
@@ -193,10 +194,13 @@ echo.
 pause
 goto main
 :FIREFOX
+title The Helper is Starting 
 start 
 :OPERA
+title The Helper is Starting
 start
 :OPERA GX
+title The Helper is Starting
 start
 :BACK
 goto main
