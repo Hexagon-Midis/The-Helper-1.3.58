@@ -1,3 +1,4 @@
+title Starting The Helper...
 @echo off
 SETLOCAL EnableDelayedExpansion
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do     rem"') do (
@@ -9,6 +10,7 @@ echo.
 if not exist "C:\The-Helper" (
     call :colorEcho 0a "The Helper is making a folder in your windows drive..."
     echo.
+	title Starting The Helper... (Making Folders...)
 	echo Making Folders...
 	echo.
 	cd C:\
@@ -37,6 +39,7 @@ if not exist "C:\The-Helper" (
 	echo.
 	pause
 	echo
+	title Starting The Helper... (Re-Checking the Folders...)
 	::make them again if deleted
 	call :colorEcho 0a Checking Folders... [ C:\The-Helper ]
 	echo.
@@ -84,6 +87,7 @@ if not exist "C:\The-Helper" (
 	echo.
 )
 )
+title Starting The Helper... (Making a Desktop Shortcut...)
 ::Make desktop shortcut (sensor) if its not there | Making desktop shortcut process...
 if not exist "%HOMEDRIVE%%HOMEPATH%\Desktop\The Helper 1.3.57.lnk" (
     call :colorEcho 0a "The Helper has made a shortcut on your desktop for you to launch it faster"
@@ -99,38 +103,14 @@ echo oLink.Save >> CreateShortcut.vbs
 cscript CreateShortcut.vbs
 del CreateShortcut.vbs
 ::Start Program "SetupStartScript.bat" For Required Files (if SENSOR is there then no downloads happen)
-:RFDP
-:Required Files Downloader Pending
+:main
+title The Helper Startup is Pending... 
 if not exist "C:\The-Helper\DownloadSystemDownloads\MidiPlayers\SENSOR_( DO NOT DELETE )" (
     call :colorEcho 0a "Loaded Downloaders for BPFA, PFA, Kiva, Zenith, FFMpeg, WinMM and PFA Viz..."
     echo.
-echo A Internet Check will be started before "SetupStartScript.bat" to see if you have Internet Access...
+echo A batch file named "SetupStartScript.bat" will be started after the above message...
 echo.
 TIMEOUT /t 1
-:InternetChecker
-::Checking for Internet Access
-echo Checking for a working Internet Connection...
-ping google.com
-echo Did replies show up? (Yes or No)
-echo.
-set /p input=Choice= 
-if %input%==yes %answer% goto InternetConnectionFound
-if %input%==no %answer% goto NoInternetConnectionFound
-:InternetConnectionFound
-:You have internet
-echo There was a connection established... Downloading Required Files...
-echo.
-TIMEOUT /t 1
-goto RFD
-:NoInternetConnectionFound
-:You have no internet
-echo There was no connection established... Skipping the Required Files Download... (You will expect issues offline)
-echo.
-pause
-goto main
-echo.
-:RFD
-:Required Files Downloader
 call :colorEcho 0a "Starting "SetupStartScript.bat" Currently..."
 echo.
 timeout /t 1
@@ -140,10 +120,11 @@ echo.
 timeout /t 2
 echo Automatically restarting The Helper in 1 minute or press any button after the downloaders are done...
 TIMEOUT 60
+title The Helper is Restarting...
 start TheHelper1.3.57.bat
 cls
 )
-:main
+title The Helper 1.3.57
 title The Helper 1.3.57
 echo.
 echo [=============================]
@@ -180,6 +161,7 @@ if %input%==6 %answer% goto POWER
 if %input%==7 %answer% goto SETTINGS
 if %input%==8 %answer% goto EXITHELPER
 :BROWSERS
+title The Helper | Browsers
 echo.
 echo [====================================================================================================================]
 echo [ Choose a browser, also depends on if you have the browser, if you dont have that browser, then it would not launch ]
@@ -219,6 +201,7 @@ start
 :BACK
 goto main
 :WEBSITES
+title The Helper | Websites
 echo.
 echo [Choose a website...] [The website will open in your default browser]
 echo.
@@ -267,6 +250,7 @@ echo.
 pause
 goto Main
 :MIDI PLAYERS
+title The Helper | Midi Players
 echo.
 echo [What midi player do you want to open?]
 echo =====
@@ -318,6 +302,7 @@ if %input%==OmniMIDI %answer% goto OMNIMIDI-SETUP
 if %input%==omnimidi %answer% goto OMNIMIDI-SETUP
 
 :OmniMIDI Download (ask)
+title The Helper | OmniMIDI Download Session
 ::starting download
 echo Are you sure you want to download, OmniMIDI? (yes or no)
 echo.
@@ -325,6 +310,7 @@ set /p input=Choice=
 if %input%==yes %answer% goto OmniMIDI Download (yes)
 if %input%==no %answer% goto main
 :OmniMIDI Download (yes)
+title The Helper | OmniMIDI Download Session
 echo.
 echo Starting the OmniMIDI Download...
 echo.
@@ -346,6 +332,7 @@ if not exist "%HOMEDRIVE%%HOMEPATH%\Downloads\OmniMIDISetup.exe" (
 )
 
 :OMNIMIDI-SETUP
+title The Helper is Starting "OmniMIDISetup.exe"
 start %HOMEDRIVE%%HOMEPATH%\Downloads\OmniMIDISetup.exe
 echo Loaded OmniMIDISetup...
 echo.
@@ -354,6 +341,7 @@ goto main
 
 
 :PFA (ask)
+title The Helper | Piano From Above
 ::I did it only to piano from above because its easier to do and take less time...
 if not exist "C:\Windows\Logs\DirectX.log" (
     call :colorEcho 0a "Do you want to continue loading piano from above or download DirectX...? (continue or directx)"
@@ -364,6 +352,7 @@ if not exist "C:\Windows\Logs\DirectX.log" (
 
 )
 :PFA
+title The Helper | Piano From Above
 if exist "C:\Windows\Logs\DirectX.log" (
     call :colorEcho 0a "Loaded Piano From Above..."
 	echo.
@@ -375,6 +364,7 @@ if exist "C:\Windows\Logs\DirectX.log" (
 	goto main
 )
 :DirectX Install
+title The Helper | DirectX Install Session
 start InstallationPrograms\dwebsetup.exe
 echo.
 echo call :colorEcho 0a Sucessfully loaded dwebsetup.exe
@@ -384,6 +374,7 @@ echo.
 TIMEOUT 120
 goto PFA
 :BPFA LIST
+title The Helper | Better Piano From Above
 echo.
 echo [Which version of Better Piano From Above do you want to open?]
 echo.
@@ -425,6 +416,7 @@ if %input%==10 %answer% goto BPFA_V2_Pre_Release_2_x86.exe
 if %input%==11 %answer% goto BPFA_PRE3_Dev-x86_64.exe
 if %input%==12 %answer% goto BPFA_PRE3_Dev_Build_2-x86_64
 :BPFA_V1
+title The Helper is Starting "BPFA_V1.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V1.exe
 echo Loaded BPFA...
 echo.
@@ -432,6 +424,7 @@ echo Notice: If the midi player didnt start then go to The Helper Main Menu > Se
 echo.
 pause
 goto main
+title The Helper is Starting "BPFA_V2_BETA_6.exe"
 :BPFA_V2_BETA_6
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Beta_6.exe
 echo Loaded BPFA...
@@ -440,6 +433,7 @@ echo Notice: If the midi player didnt start then go to The Helper Main Menu > Se
 echo.
 pause
 goto main
+title The Helper is Starting "BPFA_V2_BETA_7.exe"
 :BPFA_V2_BETA_7
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_BETA_7.exe
 echo Loaded BPFA...
@@ -449,6 +443,7 @@ echo.
 pause
 goto main
 :BPFA_V2_BETA_8
+title The Helper is Starting "BPFA_V2_BETA_8.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_BETA_8.exe
 echo Loaded BPFA...
 echo.
@@ -457,6 +452,7 @@ echo.
 pause
 goto main
 :BPFA_V2_Beta_9
+title The Helper is Starting "BPFA_V2_BETA_9.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Beta_9.exe
 echo Loaded BPFA...
 echo.
@@ -464,6 +460,7 @@ echo Notice: If the midi player didnt start then go to The Helper Main Menu > Se
 echo.
 pause
 goto main
+title The Helper is Starting "BPFA_V2_BETA_9.5.exe"
 :BPFA_V2_Beta_9.5
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Beta_9.5.exe
 echo Loaded BPFA...
@@ -473,6 +470,7 @@ echo.
 pause
 goto main
 :BPFA_V2_Beta_9.5_Misc_Tweak
+title The Helper is Starting "BPFA_V2_BETA_9.5_Misc_Tweak.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Beta_9.5_Misc_Tweak
 echo Loaded BPFA
 echo.
@@ -481,6 +479,7 @@ echo.
 pause
 goto main
 :BPFA_V2_Pre_Release_1
+title The Helper is Starting "BPFA_V2_Pre_Release_1.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Pre_Release_1
 echo Loaded BPFA
 echo.
@@ -489,6 +488,7 @@ echo.
 pause
 goto main 
 :BPFA_V2_Pre_Release_2
+title The Helper is Starting "BPFA_V2_Pre_Release_2.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Pre_Release_2
 echo Loaded BPFA
 echo.
@@ -497,6 +497,7 @@ echo.
 pause
 goto main
 :BPFA_V2_Pre_Release_2_x86.exe
+title The Helper is Starting "BPFA_V2_Pre_Release_2_x86.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_V2_Pre_Release_2_x86.exe
 echo Loaded BPFA
 echo.
@@ -505,6 +506,7 @@ echo.
 pause
 goto main
 :BPFA_PRE3_Dev-x86_64.exe
+title The Helper is Starting "BPFA_PRE3_Dev-x86_64.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_PRE3_Dev-x86_64.exe
 echo Loaded BPFA
 echo.
@@ -513,7 +515,8 @@ echo.
 pause
 goto main
 :BPFA_PRE3_Dev_Build_2-x86_64
-start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\BPFA_PRE3_Dev_Build_2-x86_64.exe
+title The Helper is Starting "BPFA_PRE3_Dev_Build_2-x86_64.exe"
+start C:\The-Helper\DownloadSystemDownl
 echo Loaded BPFA
 echo.
 echo Notice: If the midi player didnt start then go to The Helper Main Menu > Settings > Download Required Files | Then after Downloading the files you can then start the midi player...
@@ -522,6 +525,7 @@ pause
 goto main
 :Kiva
 echo Loading Kiva...
+title The Helper is Starting "Kiva.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\Kiva\Kiva.exe
 echo.
 echo Loaded Kiva...
@@ -534,6 +538,7 @@ echo.
 pause 
 goto main
 :Zenith
+title The Helper is Starting "Zenith.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\Zenith\Zenith.exe
 echo.
 echo Loaded Zenith... 
@@ -546,6 +551,7 @@ echo.
 pause
 goto main
 :PFAViz
+title The Helper is Starting "PFA-1.1.0viz-x86_64.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\PFA-1.1.0viz-x86_64.exe
 echo.
 echo Loaded PFA-VIZ...
@@ -558,8 +564,10 @@ echo.
 pause
 goto main
 :UMP
+title The Helper | Ultralight Midi Player
 
 :TMIDI
+title The Helper | Tom's Midi Player
 echo [Which Version of TMIDI Do you want to open? x64, x32, or Tmidi Very Optimized Version]
 echo.
 echo 1) x64 TMIDI
@@ -573,6 +581,7 @@ if %input%==1 %answer% goto x64-tmidi
 if %input%==2 %answer% goto x32-tmidi
 if %input%==3 %answer% goto tmidi-optimized
 :x64-tmidi
+title The Helper is Starting "TMIDI64.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\TMIDI64.exe
 echo.
 echo Notice: If the midi player didnt start then go to The Helper Main Menu > Settings > Download Required Files | Then after Downloading the files you can then start the midi player...
@@ -580,6 +589,7 @@ echo.
 pause
 goto main
 :x32-tmidi
+title The Helper is Starting "TMIDI32.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\TMIDI32.exe
 echo.
 echo Notice: If the midi player didnt start then go to The Helper Main Menu > Settings > Download Required Files | Then after Downloading the files you can then start the midi player...
@@ -587,6 +597,7 @@ echo.
 pause
 goto main
 :tmidi-optimized
+title The Helper is Starting "TMIDI.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\TMIDI.exe
 echo.
 echo Notice: If the midi player didnt start then go to The Helper Main Menu > Settings > Download Required Files | Then after Downloading the files you can then start the midi player...
@@ -594,6 +605,7 @@ echo.
 pause
 goto main
 :Chikara
+title The Helper is Starting "Chikara.exe"
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\Chikara.exe
 echo.
 echo Notice: If the midi player didnt start then go to The Helper Main Menu > Settings > Download Required Files | Then after Downloading the files you can then start the midi player...
@@ -605,6 +617,7 @@ echo not done yet...
 pause
 goto main
 :TOOLS
+title The Helper | Tools
 echo.
 echo [Choose a tool...]
 echo.
@@ -616,12 +629,14 @@ echo 3) Tool Downloader
 set /p input=Choice= 
 if %input%==1 %answer% goto SD
 :TD
+title The Helper | Tool Downloader
 ::tool downloader
 echo Not Ready Yet...
 echo.
 pause
 goto main
 :SD
+title The Helper | Soundfont Downloader
 ::soundfont downloader
 echo.
 echo [What soundfont(s) do you want to download via browser? q to exit]
@@ -637,6 +652,7 @@ if %input%==1 %answer% goto main
 if %input%==2 %answer% goto main
 if %input%==q %answer% goto main
 :MD
+title The Helper | Midi Downloader
 ::midi downloader
 echo.
 echo [What midi(s) do you want to download via browser? q to exit]
@@ -652,6 +668,7 @@ if %input%==1 %answer% goto main
 if %input%==2 %answer% goto main
 if %input%==q %answer% goto main
 :POWER
+title The Helper | Power
 echo [What do you want to do?]
 echo.
 echo 1) Shutdown
@@ -692,6 +709,7 @@ shutdown /l
 :BACKWARDS
 goto main
 :SETTINGS
+title The Helper | Settings
 echo.
 echo [Select a setting...]
 echo.
@@ -706,40 +724,14 @@ if %input%==1 %answer% goto CLEARSCREEN
 if %input%==2 %answer% goto CHECK-VERTIFY
 if %input%==3 %answer% goto DRF
 :DRF
+title The Helper | Download Required Files
 ::Start Program "SetupStartScript.bat" For Required Files (if SENSOR is there then no downloads happen)
-:RFDP
-:Required Files Downloader Pending
 if not exist "C:\The-Helper\DownloadSystemDownloads\MidiPlayers\SENSOR_( DO NOT DELETE )" (
     call :colorEcho 0a "Loaded Downloaders for BPFA, PFA, Kiva, Zenith, FFMpeg, WinMM and PFA Viz..."
     echo.
-echo A Internet Check will be started before "SetupStartScript.bat" to see if you have Internet Access...
+echo A batch file named "SetupStartScript.bat" will be started after the above text...
 echo.
 TIMEOUT /t 1
-:InternetChecker
-::Checking for Internet Access
-echo Checking for a working Internet Connection...
-echo.
-ping google.com
-echo Did replies show up? (Yes or No)
-echo.
-set /p input=Choice= 
-if %input%==yes %answer% goto InternetConnectionFound
-if %input%==no %answer% goto NoInternetConnectionFound
-:InternetConnectionFound
-:You have internet
-echo There was a connection established... Downloading Required Files...
-echo.
-TIMEOUT /t 1
-goto RFD2
-:NoInternetConnectionFound
-:You have no internet
-echo There was no connection established... Skipping the Required Files Download... (You will expect issues offline)
-echo.
-pause
-goto main
-echo.
-:RFD2
-:Required Files Downloader
 call :colorEcho 0a "Starting "SetupStartScript.bat" Currently..."
 echo.
 timeout /t 1
@@ -753,6 +745,7 @@ start TheHelper1.3.57.bat
 cls
 )
 :CHECK-VERTIFY
+title The Helper is Currently Veritifying All Files...
 call colorEcho Vertifying all files via The Helper and via [ C:\The-Helper\DownloadSystemDownloads\Midiplayers ]
 pause
 goto main
