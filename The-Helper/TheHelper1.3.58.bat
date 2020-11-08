@@ -677,7 +677,7 @@ if %input%==q %answer% goto main
 :TD
 
 :TauPreview
-
+start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\TauPreview.bat
 :POWER
 title The Helper | Power
 echo [What do you want to do?]
