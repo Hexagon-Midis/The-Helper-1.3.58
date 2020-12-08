@@ -161,7 +161,7 @@ if %input%==6 %answer% goto POWER
 if %input%==7 %answer% goto SETTINGS
 if %input%==8 %answer% goto EXITHELPER
 :BROWSERS
-title The Helper | Browsers
+title The Helper (Browsers)
 echo.
 echo [====================================================================================================================]
 echo [ Choose a browser, also depends on if you have the browser, if you dont have that browser, then it would not launch ]
@@ -205,7 +205,7 @@ start
 :BACK
 goto main
 :WEBSITES
-title The Helper | Websites
+title The Helper (Websites)
 echo.
 echo [Choose a website...] [The website will open in your default browser]
 echo.
@@ -254,7 +254,7 @@ echo.
 pause
 goto Main
 :MIDI PLAYERS
-title The Helper | Midi Players
+title The Helper (Midi Players)
 echo.
 echo [What midi player do you want to open?]
 echo =====
@@ -306,7 +306,7 @@ if %input%==OmniMIDI %answer% goto OMNIMIDI-SETUP
 if %input%==omnimidi %answer% goto OMNIMIDI-SETUP
 
 :OmniMIDI Download (ask)
-title The Helper | OmniMIDI Download Session
+title The Helper (OmniMIDI Download Session)
 ::starting download
 echo Are you sure you want to download, OmniMIDI? (yes or no)
 echo.
@@ -314,7 +314,7 @@ set /p input=Choice=
 if %input%==yes %answer% goto OmniMIDI Download (yes)
 if %input%==no %answer% goto main
 :OmniMIDI Download (yes)
-title The Helper | OmniMIDI Download Session
+title The Helper (OmniMIDI Download Session)
 echo.
 echo Starting the OmniMIDI Download...
 echo.
@@ -345,7 +345,7 @@ goto main
 
 
 :PFA (ask)
-title The Helper | Piano From Above
+title The Helper (Piano From Above)
 ::I did it only to piano from above because its easier to do and take less time...
 if not exist "C:\Windows\Logs\DirectX.log" (
     call :colorEcho 0a "Do you want to continue loading piano from above or download DirectX...? (continue or directx)"
@@ -356,7 +356,7 @@ if not exist "C:\Windows\Logs\DirectX.log" (
 
 )
 :PFA
-title The Helper | Piano From Above
+title The Helper (Piano From Above)
 if exist "C:\Windows\Logs\DirectX.log" (
     call :colorEcho 0a "Loaded Piano From Above..."
 	echo.
@@ -368,7 +368,7 @@ if exist "C:\Windows\Logs\DirectX.log" (
 	goto main
 )
 :DirectX Install
-title The Helper | DirectX Install Session
+title The Helper (DirectX Install Session)
 start InstallationPrograms\dwebsetup.exe
 echo.
 echo call :colorEcho 0a Sucessfully loaded dwebsetup.exe
@@ -378,7 +378,7 @@ echo.
 TIMEOUT 120
 goto PFA
 :BPFA LIST
-title The Helper | Better Piano From Above
+title The Helper (Better Piano From Above)
 echo.
 echo [Which version of Better Piano From Above do you want to open?]
 echo.
@@ -568,10 +568,10 @@ echo.
 pause
 goto main
 :UMP
-title The Helper | Ultralight Midi Player
+title The Helper (Ultralight Midi Player)
 
 :TMIDI
-title The Helper | Tom's Midi Player
+title The Helper (Tom's Midi Player)
 echo [Which Version of TMIDI Do you want to open? x64, x32, or Tmidi Very Optimized Version]
 echo.
 echo 1) x64 TMIDI
@@ -621,7 +621,7 @@ echo not done yet...
 pause
 goto main
 :TOOLS
-title The Helper | Tools
+title The Helper (Tools)
 echo.
 echo [Choose a tool...]
 echo.
@@ -634,14 +634,14 @@ set /p input=Choice=
 if %input%==1 %answer% goto SD
 if %input%==2 %answer% goto MD
 :TD
-title The Helper | Tool Downloader
+title The Helper (Tool Downloader)
 ::tool downloader
 echo Not Ready Yet...
 echo.
 pause
 goto main
 :SD
-title The Helper | Soundfont Downloader
+title The Helper (Soundfont Downloader)
 ::soundfont downloader
 echo.
 echo [What soundfont(s) do you want to download via browser? q to exit]
@@ -657,7 +657,7 @@ if %input%==1 %answer% goto main
 if %input%==2 %answer% goto main
 if %input%==q %answer% goto main
 :MD
-title The Helper | Midi Downloader
+title The Helper (Midi Downloader)
 ::midi downloader
 echo.
 echo [What midi(s) do you want to download via browser? q to exit]
@@ -679,7 +679,7 @@ if %input%==q %answer% goto main
 :TauPreview
 start C:\The-Helper\DownloadSystemDownloads\MidiPlayers\TauPreview.bat
 :POWER
-title The Helper | Power
+title The Helper (Power)
 echo [What do you want to do?]
 echo.
 echo 1) Shutdown
@@ -720,7 +720,7 @@ shutdown /l
 :BACKWARDS
 goto main
 :SETTINGS
-title The Helper | Settings
+title The Helper (Settings)
 echo.
 echo [Select a setting...]
 echo.
@@ -735,7 +735,7 @@ if %input%==1 %answer% goto CLEARSCREEN
 if %input%==2 %answer% goto CHECK-VERTIFY
 if %input%==3 %answer% goto DRF
 :DRF
-title The Helper | Download Required Files
+title The Helper (Download Required Files)
 ::Start Program "SetupStartScript.bat" For Required Files (if SENSOR is there then no downloads happen)
 if not exist "C:\The-Helper\DownloadSystemDownloads\MidiPlayers\SENSOR_( DO NOT DELETE )" (
     call :colorEcho 0a "Loaded Downloaders for BPFA, PFA, Kiva, Zenith, FFMpeg, WinMM and PFA Viz..."
