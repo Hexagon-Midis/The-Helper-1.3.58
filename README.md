@@ -25,4 +25,8 @@ You can find THSE at: N/A Deleted by me
 
 To use (download) The Helper, click the green "Code" Button and then click "Download ZIP"
 
+# Extracting The Helper Correctly
+
+Extracting The Helper is simple, first, download The Helper, second, go into the ZIP file, third, look for the folder named "The-Helper" and extract that folder ONLY to downloads for The Helper to work correctly. Fourth, run The Helper. Enjoy!
+
 # Copyright © Hexagon Midis 2020
